@@ -6,7 +6,7 @@ import Skill from "../components/Skill";
 import Site from "../components/Site";
 import Port from "../components/Port";
 import Footer from "../components/Footer";
-import Contact from "../components/Contact";
+import Contacts from "../components/Contacts";
 import Main from "../components/Main";
 
 const HomeView = () => {
@@ -19,7 +19,7 @@ const HomeView = () => {
         <Skill />
         <Site />
         <Port />
-        <Contact />
+        <Contacts />
       </Main>
       <Footer />
     </>
