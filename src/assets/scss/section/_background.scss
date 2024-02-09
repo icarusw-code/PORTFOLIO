@@ -1,0 +1,50 @@
+#background {
+  height: 100vh;
+}
+
+.keyart,
+.keyart_layer {
+  height: 1100px;
+}
+
+$background-color_1: #ffaf1b;
+$background-color_2: #ffaf00;
+
+.keyart {
+  position: relative;
+  z-index: 10;
+}
+.keyart_layer {
+  background-position: bottom center;
+  background-size: auto 1038px;
+  background-repeat: repeat-x;
+  width: 100%;
+  position: absolute;
+}
+.keyart_layer.parallax {
+  position: absolute;
+  will-change: transform; // 성능 최적화를 위해 추가
+}
+#keyart-0 {
+  background-color: $background-color_1;
+}
+#keyart-1 {
+}
+#keyart-2 {
+}
+#keyart-3 {
+}
+#keyart-4 {
+}
+#keyart-5 {
+}
+#keyart-6 {
+}
+#keyart-7 {
+}
+#keyart-8 {
+}
+#keyart-scrim {
+  background-color: $background-color_2;
+  opacity: 0;
+}

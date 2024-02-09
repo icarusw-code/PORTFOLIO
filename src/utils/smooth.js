@@ -13,9 +13,7 @@ const lenis = () => {
 
   requestAnimationFrame(raf);
 
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
+  lenis.on("scroll", (e) => {});
 };
 
 export default lenis;

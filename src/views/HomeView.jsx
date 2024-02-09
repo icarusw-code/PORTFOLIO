@@ -8,6 +8,7 @@ import Port from "../components/Port";
 import Footer from "../components/Footer";
 import Contacts from "../components/Contacts";
 import Main from "../components/Main";
+import Backgroud from "../components/Backgroud";
 
 const HomeView = () => {
   return (
@@ -15,6 +16,7 @@ const HomeView = () => {
       <Skip />
       <Header />
       <Main>
+        <Backgroud />
         <Intro />
         <Skill />
         <Site />
