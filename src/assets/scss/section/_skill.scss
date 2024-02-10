@@ -18,8 +18,8 @@
     line-height: 1.6;
     font-family: var(--mainKor-font);
     text-transform: uppercase;
-    color: var(--black100);
-    border-bottom: 0.4vw solid var(--black100);
+    color: var(--text-color-sunset);
+    border-bottom: 0.4vw solid var(--text-color-sunset);
 
     @media (max-width: 800px) {
       width: 100%;
@@ -38,6 +38,7 @@
   }
   .skill__desc {
     width: 50%;
+    color: var(--text-color-sunset);
 
     @media (max-width: 800px) {
       width: 100%;
