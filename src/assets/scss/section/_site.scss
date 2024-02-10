@@ -12,8 +12,8 @@
     line-height: 1.6;
     font-family: var(--mainKor-font);
     text-transform: uppercase;
-    color: var(--black100);
-    border-bottom: 0.4vw solid var(--black100);
+    color: var(--text-color-sunset);
+    border-bottom: 0.4vw solid var(--text-color-sunset);
     margin-bottom: 100px;
 
     @media (max-width: 800px) {
@@ -39,9 +39,10 @@
       flex-direction: column;
       position: sticky;
       left: 0;
+      color: var(--text-color-sunset);
 
       &.s1 {
-        background-color: var(--subBg100);
+        background-color: var(--subSunset100);
         top: 180px;
 
         @media (max-width: 800px) {
@@ -49,7 +50,7 @@
         }
       }
       &.s2 {
-        background-color: var(--subBg200);
+        background-color: var(--subSunset200);
         top: 200px;
 
         @media (max-width: 800px) {
@@ -57,7 +58,7 @@
         }
       }
       &.s3 {
-        background-color: var(--subBg300);
+        background-color: var(--subSunset300);
         top: 220px;
 
         @media (max-width: 800px) {
@@ -65,7 +66,7 @@
         }
       }
       &.s4 {
-        background-color: var(--subBg400);
+        background-color: var(--subSunset400);
         top: 240px;
 
         @media (max-width: 800px) {
@@ -112,13 +113,13 @@
         a {
           text-decoration: underline;
           text-transform: uppercase;
-          color: var(--black200);
+          color: var(--text-color-sunset100);
           font-size: 1rem;
           transition: all 0.3s;
           margin: 0 2px;
 
           &:hover {
-            color: var(--black);
+            color: var(--sub-text-color-sunset);
           }
         }
       }
