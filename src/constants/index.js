@@ -194,12 +194,12 @@ export const portText = [
 
 export const contactText = [
   {
-    link: "https://open.kakao.com/o/gM7YLzwf",
-    title: "KAKAO : webstupids",
+    link: "https://github.com/icarusw-code",
+    title: "Github : icarusw-code",
   },
   {
-    link: "mailto:webstoryboy@naver.com",
-    title: "mail : webstoryboy@naver.com",
+    link: "mailto:cordelia35794@gmail.com",
+    title: "mail : cordelia35794@gmail.com",
   },
 ];
 

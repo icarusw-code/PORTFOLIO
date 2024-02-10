@@ -7,13 +7,15 @@
   .footer__text {
     font-size: 12px;
     text-transform: uppercase;
-    border-top: 1px solid var(--black);
-    border-bottom: 1px solid var(--black);
+    color: var(--text-color-sunset);
+    // border-top: 1px solid var(--subBg500);
+    // border-bottom: 1px solid var(--subBg500);
     display: flex;
     justify-content: space-between;
   }
   .footer__info {
     display: flex;
+    color: var(--text-color-sunset);
     justify-content: space-between;
     margin: 100px 0;
 
@@ -29,12 +31,12 @@
       }
 
       .title {
-        border-top: 2px solid var(--black);
-        border-bottom: 1px solid var(--black);
+        border-top: 2px solid var(--text-color-sunset);
+        border-bottom: 1px solid var(--text-color-sunset);
         padding: 20px 0;
         text-transform: uppercase;
         font-weight: 700;
-        background: url(../../img/arrow.svg) no-repeat right 20px;
+        // background: url(../../img/arrow.svg) no-repeat right 20px;
         transition: all 0.3s;
 
         &:hover {
@@ -61,16 +63,16 @@
       }
 
       h3 {
-        border-top: 2px solid var(--black);
+        border-top: 2px solid var(--text-color-sunset);
         font-size: 10px;
         margin-bottom: 40px;
         padding-top: 10px;
       }
       ul {
-        border-top: 1px solid var(--black);
+        border-top: 1px solid var(--text-color-sunset);
 
         li {
-          border-bottom: 1px solid var(--black);
+          border-bottom: 1px solid var(--text-color-sunset);
 
           a {
             padding: 14px 0;
