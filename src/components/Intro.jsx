@@ -20,7 +20,12 @@ const Intro = () => {
         </div>
         <div className="intro__text">
           <div className="text">
-            <div>{introText.desc[0]}</div>
+            {/* <div>{introText.desc[0]}</div>
+            <div>{introText.desc[1]}</div>
+            <div>{introText.desc[2]}</div> */}
+            <div>
+              <i className="mdi mdi-speedmeter"></i>
+            </div>
             <div>{introText.desc[1]}</div>
             <div>{introText.desc[2]}</div>
           </div>

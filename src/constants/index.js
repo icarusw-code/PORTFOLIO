@@ -77,7 +77,7 @@ export const backgroundImg = [
 ];
 
 export const introText = {
-  title: "Software developer",
+  title: "Growing Developer",
   desc: ["talent is", "found at the end of the", "effort"],
 };
 
