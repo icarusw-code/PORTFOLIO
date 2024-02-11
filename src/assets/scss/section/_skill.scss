@@ -19,6 +19,7 @@
     font-family: var(--mainKor-font);
     text-transform: uppercase;
     color: var(--text-color-sunset);
+    background-color: blue;
     border-bottom: 0.4vw solid var(--text-color-sunset);
 
     @media (max-width: 800px) {
@@ -27,7 +28,7 @@
       font-size: 30px;
       height: auto;
       top: 68px;
-      background-color: var(--mainBg-color);
+      background-color: var(--mainBg-color-sunset);
     }
 
     em {
