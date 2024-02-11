@@ -19,6 +19,13 @@ import background6 from "../assets/img/background/background6.png";
 import background7 from "../assets/img/background/background7.png";
 import background8 from "../assets/img/background/background8.png";
 
+import {
+  mdiSpeedometer,
+  mdiCellphoneLink,
+  mdiLightbulbOn10,
+  mdiRocketLaunch,
+} from "@mdi/js";
+
 export const headerNav = [
   {
     title: "intro",
@@ -78,7 +85,34 @@ export const backgroundImg = [
 
 export const introText = {
   title: "Growing Developer",
-  desc: ["talent is", "found at the end of the", "effort"],
+  desc: [
+    {
+      icon: mdiSpeedometer,
+      title: "Fast",
+      content: [
+        "Fast load times and lag free interaction,",
+        "my highest priority.",
+      ],
+    },
+    {
+      icon: mdiCellphoneLink,
+      title: "Responsive",
+      content: ["My layouts will work on any device,", " big or small."],
+    },
+    {
+      icon: mdiLightbulbOn10,
+      title: "Intuitive",
+      content: ["Strong preference for easy to use,", " intuitive UX/UI."],
+    },
+    {
+      icon: mdiCellphoneLink,
+      title: "Dynamic",
+      content: [
+        "Websites don't have to be static, ",
+        "I love making pages come to life.",
+      ],
+    },
+  ],
 };
 
 export const journeyText = [

@@ -21,10 +21,10 @@ const Backgroud = () => {
   return (
     <section id="background">
       <div className="keyart" id="parallax">
-        {backgroundImg.map((background, key) => (
+        {backgroundImg.map((background, index) => (
           <div
             className="keyart_layer parallax"
-            id={`keyart-${key}`}
+            id={`keyart-${index}`}
             style={{ backgroundImage: `url(${background.img})` }}
           ></div>
         ))}

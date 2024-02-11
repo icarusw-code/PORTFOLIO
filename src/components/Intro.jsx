@@ -1,4 +1,6 @@
 import React from "react";
+import { Icon } from "@mdi/react";
+import { mdiSpeedometer } from "@mdi/js";
 
 import about from "../assets/img/about.jpg";
 
@@ -20,18 +22,25 @@ const Intro = () => {
         </div>
         <div className="intro__text">
           <div className="text">
-            {/* <div>{introText.desc[0]}</div>
-            <div>{introText.desc[1]}</div>
-            <div>{introText.desc[2]}</div> */}
-            <div>
-              <i className="mdi mdi-speedmeter"></i>
-            </div>
-            <div>{introText.desc[1]}</div>
-            <div>{introText.desc[2]}</div>
+            {introText.desc.map((intro, key) => (
+              <div className="textbox">
+                <div>
+                  <Icon path={intro.icon} size={3} />
+                </div>
+                <div>
+                  <div className="textbox__title">{intro.title}</div>
+                  <div className="textbox__content">
+                    <div>{intro.content[0]}</div>
+                    <div>{intro.content[1]}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="img">
             <img src={about} alt="어바웃" />
           </div>
+          <div className="about">Hello I'm seongjin</div>
         </div>
         <div className="intro__lines bottom" aria-hidden="true">
           <span className="line"></span>
