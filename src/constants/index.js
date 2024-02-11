@@ -9,6 +9,16 @@ import port08 from "../assets/img/port08.jpg";
 import port09 from "../assets/img/port09.jpg";
 import port10 from "../assets/img/port10.jpg";
 
+import background0 from "../assets/img/background/background0.png";
+import background1 from "../assets/img/background/background1.png";
+import background2 from "../assets/img/background/background2.png";
+import background3 from "../assets/img/background/background3.png";
+import background4 from "../assets/img/background/background4.png";
+import background5 from "../assets/img/background/background5.png";
+import background6 from "../assets/img/background/background6.png";
+import background7 from "../assets/img/background/background7.png";
+import background8 from "../assets/img/background/background8.png";
+
 export const headerNav = [
   {
     title: "intro",
@@ -16,10 +26,10 @@ export const headerNav = [
   },
   {
     title: "skill",
-    url: "#skill",
+    url: "",
   },
   {
-    title: "site",
+    title: "masterpiece",
     url: "#site",
   },
   {
@@ -27,8 +37,42 @@ export const headerNav = [
     url: "#port",
   },
   {
+    title: "journey",
+    url: "#journey",
+  },
+  {
     title: "contact",
     url: "#contact",
+  },
+];
+
+export const backgroundImg = [
+  {
+    img: background0,
+  },
+  {
+    img: background1,
+  },
+  {
+    img: background2,
+  },
+  {
+    img: background3,
+  },
+  {
+    img: background4,
+  },
+  {
+    img: background5,
+  },
+  {
+    img: background6,
+  },
+  {
+    img: background7,
+  },
+  {
+    img: background8,
   },
 ];
 
@@ -37,7 +81,7 @@ export const introText = {
   desc: ["talent is", "found at the end of the", "effort"],
 };
 
-export const skillText = [
+export const journeyText = [
   {
     title: "꿈을 설계하고 디자인하다.",
     desc: "나는 공간을 만드는 것을 좋아한다. 어려을 때부터 나만의 공간을만드는 것을 좋아했고 나만의 다락방을 좋아했다. 단 한 사람이라도내가 만든 공간 속에서 영감을 받거나 마음이 움직였으면 좋겠다.나만의 공간을 마음것 만들 수 있다는 건 코딩에 엄청난 매력인거같다. 그 한구석에 나만의 꿈을 설계하고, 개발을 하며 앞으로도 살고싶다.",

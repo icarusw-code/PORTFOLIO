@@ -1,4 +1,4 @@
-.skill__inner {
+.journey__inner {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -7,7 +7,7 @@
     flex-direction: column;
   }
 
-  .skill__title {
+  .journey__title {
     position: sticky;
     top: 70px;
     left: 0;
@@ -19,7 +19,6 @@
     font-family: var(--mainKor-font);
     text-transform: uppercase;
     color: var(--text-color-sunset);
-    background-color: blue;
     border-bottom: 0.4vw solid var(--text-color-sunset);
 
     @media (max-width: 800px) {
@@ -37,7 +36,7 @@
       line-height: 2;
     }
   }
-  .skill__desc {
+  .journey__desc {
     width: 50%;
     color: var(--text-color-sunset);
 
