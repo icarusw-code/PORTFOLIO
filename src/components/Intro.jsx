@@ -23,7 +23,7 @@ const Intro = () => {
         <div className="intro__text">
           <div className="text">
             {introText.desc.map((intro, key) => (
-              <div className="textbox">
+              <div className="textbox" key={key}>
                 <div>
                   <Icon path={intro.icon} size={3} />
                 </div>
