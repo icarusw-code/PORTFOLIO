@@ -40,7 +40,7 @@ export const headerNav = [
   },
   {
     title: "skill",
-    url: "",
+    url: "#skill",
   },
   {
     title: "masterpiece",
