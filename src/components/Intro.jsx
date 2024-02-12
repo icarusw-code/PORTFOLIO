@@ -40,13 +40,8 @@ const Intro = () => {
             <img src={about} alt="어바웃" />
           </div>
           <div className="about">
-            <div className="about__title">Hello I'm seongjin</div>
-            <div className="about__content">
-              An innovative software developer with expertise in AR/VR, 3D
-              content, and gaming technologies, I excel in creating immersive
-              experiences, with my strength lying in constantly striving for
-              innovation.
-            </div>
+            <div className="about__title">{introText.intro.intro}</div>
+            <div className="about__content">{introText.intro.detail}</div>
           </div>
         </div>
         <div className="intro__lines bottom" aria-hidden="true">

@@ -120,6 +120,11 @@ export const introText = {
       ],
     },
   ],
+  intro: {
+    intro: "Hello I'm seongjin",
+    detail:
+      "An innovative software developer with expertise in AR/VR, 3Dcontent, and gaming technologies, I excel in creating immersive experiences, with my strength lying in constantly striving for innovation.",
+  },
 };
 
 export const skillText = [
@@ -128,7 +133,7 @@ export const skillText = [
     img: languageImg,
   },
   {
-    title: "Game",
+    title: "Game&3D",
     img: gameImg,
   },
   {
