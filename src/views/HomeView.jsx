@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import Contacts from "../components/Contacts";
 import Main from "../components/Main";
 import Backgroud from "../components/Backgroud";
+import { Skill } from "../components/Skill";
 
 const HomeView = () => {
   return (
@@ -18,6 +19,7 @@ const HomeView = () => {
       <Main>
         <Backgroud />
         <Intro />
+        <Skill />
         <Site />
         <Port />
         <Journey />

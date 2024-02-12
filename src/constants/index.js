@@ -19,6 +19,13 @@ import background6 from "../assets/img/background/background6.png";
 import background7 from "../assets/img/background/background7.png";
 import background8 from "../assets/img/background/background8.png";
 
+import languageImg from "../assets/img/skills/Language.png";
+import gameImg from "../assets/img/skills/Game.png";
+import frontendImg from "../assets/img/skills/Frontend.png";
+import backendImg from "../assets/img/skills/Backend.png";
+import databaseImg from "../assets/img/skills/Db.png";
+import etcImg from "../assets/img/skills/Etc.png";
+
 import {
   mdiSpeedometer,
   mdiCellphoneLink,
@@ -105,7 +112,7 @@ export const introText = {
       content: ["Strong preference for easy to use,", " intuitive UX/UI."],
     },
     {
-      icon: mdiCellphoneLink,
+      icon: mdiRocketLaunch,
       title: "Dynamic",
       content: [
         "Websites don't have to be static, ",
@@ -114,6 +121,33 @@ export const introText = {
     },
   ],
 };
+
+export const skillText = [
+  {
+    title: "Language",
+    img: languageImg,
+  },
+  {
+    title: "Game",
+    img: gameImg,
+  },
+  {
+    title: "Frontend",
+    img: frontendImg,
+  },
+  {
+    title: "Backend",
+    img: backendImg,
+  },
+  {
+    title: "Database",
+    img: databaseImg,
+  },
+  {
+    title: "Etc",
+    img: etcImg,
+  },
+];
 
 export const journeyText = [
   {

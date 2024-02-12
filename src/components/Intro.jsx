@@ -1,6 +1,5 @@
 import React from "react";
 import { Icon } from "@mdi/react";
-import { mdiSpeedometer } from "@mdi/js";
 
 import about from "../assets/img/about.jpg";
 
