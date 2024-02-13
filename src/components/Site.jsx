@@ -11,13 +11,25 @@ const Site = () => {
         <div className="site__wrap">
           {siteText.map((site, key) => (
             <article className={`site__item s${key + 1}`} key={key}>
-              <span className="num">{key + 1}.</span>
-              <div className="text">
-                <div>{site.text[0]}</div>
-                <div>{site.text[1]}</div>
-                <div>{site.text[2]}</div>
+              <span className="num">
+                {key + 1}.<span className="site-title-small">{site.title}</span>
+              </span>
+              <div className="content">
+                <div className="video">
+                  <iframe
+                    src="https://www.youtube.com/embed/VIDEO_ID"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    title="YouTube Video"
+                  ></iframe>
+                </div>
+                <div className="text">
+                  <div>{site.text[0]}</div>
+                  <div>{site.text[1]}</div>
+                  <div>{site.text[2]}</div>
+                </div>
               </div>
-              <h3 className="title">{site.title}</h3>
               <div className="btn">
                 <a href={site.code}>code</a>
                 <a href={site.view}>view</a>

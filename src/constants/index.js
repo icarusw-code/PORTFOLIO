@@ -171,7 +171,11 @@ export const journeyText = [
 
 export const siteText = [
   {
-    text: ["make", "site compliant with", "webstandard"],
+    text: [
+      "As Team Leader, developed an inclusive AR platform facilitating content creation and interaction, recognized at Metaverse Academy.",
+      "Pioneered an authoring tool in Unity, empowering users to craft AR experiences.",
+      "Implemented Lua scripting, broadening creative control for users.",
+    ],
     title: "비트를 이용한 사이트 제작",
     code: "https://github.com/webstoryboy/port2023-vite",
     view: "https://port2023-vite.netlify.app",

@@ -41,6 +41,50 @@
       left: 0;
       color: var(--text-color-sunset);
 
+      .content {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 20px; // 컨텐츠 사이의 간격 유지
+
+        // flex 속성을 사용하여 가로 크기 조정
+        .text,
+        .video {
+          flex: 1 1 60%; // flex-grow, flex-shrink, flex-basis 값을 설정
+          // flex-basis 값을 60%로 설정하여 두 항목이 전체 공간의 대략 2배 크기를 차지하도록 조정
+        }
+
+        .video {
+          iframe {
+            width: 100%;
+            // 높이는 동영상 비율에 따라 조정할 수 있지만, 여기서는 가로 크기에 초점을 맞춤
+            height: 400px; // 기존 높이 유지 또는 비율에 맞게 조정
+
+            @media (max-width: 800px) {
+              height: 200px; // 모바일 화면에서 높이 조정
+            }
+          }
+        }
+
+        .text {
+          // 기존 스타일 유지
+          background-color: var(--white);
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: black;
+          // 높이를 고정하거나 최대 높이 설정 제거
+          height: 400px;
+          > div {
+            font-size: 20px; // 모든 화면 크기에 대해 글자 크기를 20px로 고정
+            line-height: 1.5; // 글자 간 줄 간격을 늘림
+          }
+        }
+      }
+
       &.s1 {
         background-color: var(--subSunset100);
         top: 180px;
@@ -82,6 +126,10 @@
         left: 1vw;
         top: 1vw;
 
+        .site-title-small {
+          font-size: 3vw;
+        }
+
         @media (max-width: 800px) {
           font-size: 80px;
           left: 20px;
@@ -93,11 +141,11 @@
         margin-bottom: 1rem;
 
         > div {
-          font-size: 3vw;
+          font-size: 10px;
           line-height: 1;
-          font-weight: 900;
-          text-transform: uppercase;
-          text-decoration: underline;
+          font-weight: 500;
+          // text-transform: uppercase;
+          // text-decoration: underline;
           font-family: var(--mainEng-font);
 
           @media (max-width: 800px) {
