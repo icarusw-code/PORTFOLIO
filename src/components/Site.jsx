@@ -17,10 +17,10 @@ const Site = () => {
               <div className="content">
                 <div className="video">
                   <iframe
-                    src="https://www.youtube.com/embed/VIDEO_ID"
-                    frameborder="0"
+                    src={site.videolink}
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                     title="YouTube Video"
                   ></iframe>
                 </div>
