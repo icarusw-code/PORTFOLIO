@@ -13,7 +13,11 @@ const Journey = () => {
             <div key={key}>
               <span>{key + 1}.</span>
               <h3>{journey.title}</h3>
-              <p>{journey.desc}</p>
+              <div className="paragraph">
+                {journey.desc.map((desc, key) => (
+                  <p>{desc}</p>
+                ))}
+              </div>
             </div>
           ))}
         </div>
