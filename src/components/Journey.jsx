@@ -15,7 +15,7 @@ const Journey = () => {
               <h3>{journey.title}</h3>
               <div className="paragraph">
                 {journey.desc.map((desc, key) => (
-                  <p>{desc}</p>
+                  <p key={key}>{desc}</p>
                 ))}
               </div>
             </div>

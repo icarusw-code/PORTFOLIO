@@ -1,8 +1,8 @@
-import port01 from "../assets/img/port01.jpg";
-import port02 from "../assets/img/port02.jpg";
-import port03 from "../assets/img/port03.jpg";
-import port04 from "../assets/img/port04.jpg";
-import port05 from "../assets/img/port05.jpg";
+import port01 from "../assets/img/port01.png";
+import port02 from "../assets/img/port02.png";
+import port03 from "../assets/img/port03.png";
+import port04 from "../assets/img/port04.png";
+import port05 from "../assets/img/port05.png";
 
 import background0 from "../assets/img/background/background0.png";
 import background1 from "../assets/img/background/background1.png";
@@ -171,7 +171,7 @@ export const siteText = [
       "Everything you create can be experienced directly within the SpaceAR application, offering an immersive and accessible way to engage with AR technology.",
     ],
     code: "",
-    view: "",
+    view: "https://www.youtube.com/embed/52O86I_6uGQ",
     videolink: "https://www.youtube.com/embed/qzDbcda_p4c",
     info: [
       "AR Platform",
@@ -187,7 +187,7 @@ export const siteText = [
       "Through interactive dialogue, the AI learns and enhances its problem-solving abilities, ensuring a dynamic and adaptive approach to rescue operations.",
     ],
     code: "",
-    view: "",
+    view: "https://www.youtube.com/embed/YEvBzJFoslg",
     videolink: "https://www.youtube.com/embed/YEvBzJFoslg",
     info: [
       "VR Contents",
@@ -203,7 +203,7 @@ export const siteText = [
       "Upon successfully making twice dishes, participants are rewarded with a charming Korean kkaebi (pet) companion that follows them throughout their metaverse journey.",
     ],
     code: "",
-    view: "",
+    view: "https://www.youtube.com/embed/LsnSpxjPEGg",
     videolink: "https://www.youtube.com/embed/LsnSpxjPEGg",
     info: [
       "Metaverse",
@@ -219,7 +219,7 @@ export const siteText = [
       "The game's outcome is determined by calculating the ratio of a specific color applied to the entire texture, showcasing our technical prowess in recreating and enhancing this dynamic gameplay mechanic.",
     ],
     code: "",
-    view: "",
+    view: "https://www.youtube.com/embed/4j46nfvujqU",
     videolink: "https://www.youtube.com/embed/4j46nfvujqU",
     info: [
       "Game Replica",
@@ -236,7 +236,7 @@ export const portText = [
     desc: "Explore the captivating world of our casual puzzle game, where the mechanics of light reflection take center stage. By leveraging Raycast technology, we've enriched the gameplay with complex strategies through the implementation of light reflection, prism effects, and portal functionalities. The game's aesthetics are enhanced by Line Renderer, which adds a stunning visual quality to the light effects. Moreover, we've integrated hand tracking technology, offering an innovative way for players to interact with the game using their hands as seen through the camera, providing a unique and immersive experience.",
     img: port01,
     code: "",
-    view: "",
+    view: "https://www.youtube.com/embed/velO1Co5RjI",
     name: "LightPeriator",
   },
   {
@@ -245,7 +245,7 @@ export const portText = [
     desc: "Inspired by the iconic Ace Combat 7, our project delivers an immersive flight simulation experience, where the physics of altitude and speed authentically impact the plane's operation. We've introduced a diverse fleet of aircraft, utilizing Classes to structure common properties, ensuring a rich selection for enthusiasts. Moreover, targeting and engaging enemies is seamlessly executed through the use of Lists, allowing players to smoothly select and switch targets, enhancing the tactical depth and realism of aerial combat.",
     img: port02,
     code: "",
-    view: "",
+    view: "https://www.youtube.com/embed/7SVUR3mXTXw",
     name: "AceCombat7(Replica)",
   },
   {

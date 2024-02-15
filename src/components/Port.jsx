@@ -47,24 +47,21 @@ const Port = () => {
               ref={(el) => (sectionRef.current[key] = el)}
             >
               <span className="num">{port.num}.</span>
-              <a
-                href={port.code}
-                target="_blank"
-                className="img"
-                rel="noreferrer"
-              >
+              <div>
                 <img src={port.img} alt={port.name} />
-              </a>
+              </div>
               <h3 className="title">{port.title}</h3>
               <p className="desc">{port.desc}</p>
-              <a
-                href={port.view}
-                target="_blank"
-                className="site"
-                rel="noreferrer"
-              >
-                사이트 보기
-              </a>
+              {port.view && (
+                <a
+                  href={port.view}
+                  target="_blank"
+                  className="site"
+                  rel="noreferrer"
+                >
+                  VIEW
+                </a>
+              )}
             </article>
           ))}
         </div>

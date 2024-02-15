@@ -31,8 +31,8 @@ const Site = () => {
                 </div>
               </div>
               <div className="btn">
-                <a href={site.code}>code</a>
-                <a href={site.view}>view</a>
+                {/* <a href={site.code}>code</a> */}
+                <a href={site.view}>See More</a>
               </div>
               <div className="info">
                 <span>{site.info[0]}</span>
