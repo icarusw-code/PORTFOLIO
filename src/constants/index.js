@@ -279,8 +279,8 @@ export const portText = [
 
 export const contactText = [
   {
-    link: "https://github.com/icarusw-code",
-    title: "Github : icarusw-code",
+    link: "https://www.linkedin.com/in/seongjin-choi-0b3a96234/",
+    title: "linkedin : seongjin.choi",
   },
   {
     link: "mailto:cordelia35794@gmail.com",
