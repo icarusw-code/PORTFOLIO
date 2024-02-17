@@ -27,46 +27,25 @@
   }
   .port__wrap {
     display: flex;
-    flex-wrap: wrap;
-    width: 7000px;
+    flex-wrap: nowrap; // 항상 한 줄에 표시
+    overflow-x: auto; // 가로 스크롤 허용
+    width: 100%; // 너비를 100%로 설정하여 부모 요소에 맞춤
 
     .port__item {
-      width: 500px;
+      width: 500px; // 기본 너비를 500px로 유지
       height: 70vh;
+      margin-right: 20px; // 마지막 아이템을 제외한 오른쪽 여백
+      flex-shrink: 0; // flex 아이템이 축소되지 않도록 설정
       background-color: var(--subSunset500);
       padding: 2.5rem;
       margin-right: 20px;
 
-      // &.p1 {
-      //   background-color: var(--black300);
-      // }
-      // &.p2 {
-      //   background-color: var(--black300);
-      // }
-      // &.p3 {
-      //   background-color: var(--black300);
-      // }
-      // &.p4 {
-      //   background-color: var(--black300);
-      // }
-      // &.p5 {
-      //   background-color: var(--black300);
-      // }
-      // &.p6 {
-      //   background-color: var(--black300);
-      // }
-      // &.p7 {
-      //   background-color: var(--black300);
-      // }
-      // &.p8 {
-      //   background-color: var(--black300);
-      // }
-      // &.p9 {
-      //   background-color: var(--black300);
-      // }
-      // &.p10 {
-      //   background-color: var(--black300);
-      // }
+      @media (max-width: 800px) {
+        // 모바일 화면에서 스타일 조정
+        width: 100%; // 모바일 화면 너비에 맞춤
+        margin-right: 0; // 오른쪽 여백 제거
+      }
+
       .num {
         font-size: 2rem;
         font-family: var(--mainNum-font);
