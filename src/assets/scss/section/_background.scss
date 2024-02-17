@@ -6,6 +6,9 @@
 .keyart,
 .keyart_layer {
   height: 1100px;
+  @media (max-width: 800px) {
+    height: 800px;
+  }
 }
 
 $background-color_1: #ffaf1b;
