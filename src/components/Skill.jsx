@@ -5,9 +5,7 @@ import { skillText } from "../constants";
 export const Skill = () => {
   return (
     <section id="skill">
-      <h2 className="title">
-        Skills <em>기술 스택</em>
-      </h2>
+      <h2 className="title">Skills</h2>
       <div className="skill__container">
         {skillText.map((skill, key) => (
           <div className="skill__box" key={key}>

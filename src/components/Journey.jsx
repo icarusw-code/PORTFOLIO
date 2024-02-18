@@ -5,9 +5,7 @@ const Journey = () => {
   return (
     <section id="journey">
       <div className="journey__inner">
-        <h2 className="journey__title">
-          My Journey <em>나의 기록</em>
-        </h2>
+        <h2 className="journey__title">My Journey</h2>
         <div className="journey__desc">
           {journeyText.map((journey, key) => (
             <div key={key}>
@@ -15,7 +13,7 @@ const Journey = () => {
               <h3>{journey.title}</h3>
               <div className="paragraph">
                 {journey.desc.map((desc, key) => (
-                  <p key={key}>{desc}</p>
+                  <li key={key}>{desc}</li>
                 ))}
               </div>
             </div>

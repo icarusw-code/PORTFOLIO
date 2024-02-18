@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="footer__right">
           © seongjin choi
           <br />
-          firewatchgame 디자인을 참고 했습니다.
+          Inspired by the firewatchgame design.
         </div>
       </div>
     </footer>

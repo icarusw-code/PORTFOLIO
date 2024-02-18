@@ -291,17 +291,17 @@ export const contactText = [
 export const footerText = [
   {
     title: "github",
-    desc: "깃헙에 오시면 더 많은 소스를 볼 수 있습니다.",
+    desc: "You can see more sources.",
     link: "https://github.com/icarusw-code",
   },
   {
     title: "youtube",
-    desc: "유튜브에 오시면 더 많은 영상을 볼 수 있습니다.",
+    desc: "You can see more video.",
     link: "https://www.youtube.com/@blackted8044/videos",
   },
   {
     title: "linkedin",
-    desc: "저에대해 더 많은 정보를 볼 수 있습니다.",
+    desc: "You can see more information about me.",
     link: "https://www.linkedin.com/in/seongjin-choi-0b3a96234/",
   },
 ];

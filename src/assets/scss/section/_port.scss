@@ -96,6 +96,9 @@
         padding: 0.625rem 1.5rem;
         margin-top: 1.5rem;
         transition: all 0.2s;
+        @media (max-width: 800px) {
+          padding: 0;
+        }
 
         &:hover {
           border: 1px solid var(--text-color-sunset);

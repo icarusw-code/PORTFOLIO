@@ -51,8 +51,12 @@
       transition: all 0.3s;
       cursor: all-scroll;
 
+      .content {
+        padding-bottom: 2vw;
+      }
+
       @media (max-width: 800px) {
-        font-size: 24px;
+        font-size: 4vw;
         padding: 0 16px;
         word-break: break-all;
       }

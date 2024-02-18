@@ -22,6 +22,7 @@
     border-bottom: 0.4vw solid var(--text-color-sunset);
 
     @media (max-width: 800px) {
+      position: relative;
       width: 100%;
       margin-bottom: 10vw;
       font-size: 30px;

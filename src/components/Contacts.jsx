@@ -18,7 +18,7 @@ const Contacts = () => {
         <div className="contact__text">
           <div className="text">
             {contactText.map((contact, key) => (
-              <div key={key}>
+              <div className="content" key={key}>
                 <a
                   href={contact.link}
                   rel="noopener noreferrer"
