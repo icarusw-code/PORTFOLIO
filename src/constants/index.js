@@ -56,29 +56,29 @@ export const caseStudies = [
   {
     index: "01",
     label: "DEPLOYMENT INTEGRITY",
-    title: "MES Deployment Intelligence Suite",
+    title: "MES Deployment Audit & UI Intelligence",
     summary:
-      "An integrated diagnostic system connecting MES_Smart_Tool with MES_AI_SERVER to validate deployment integrity and support faster analysis.",
+      "A two-part toolset: a seven-step deployment audit that traces changed UI source to server registrations, and a semantic search server that indexes MES UI structure and service metadata.",
     challenge:
-      "Manual verification across distributed services was slow and could miss mismatched application or service identifiers.",
+      "Manual checks could miss indirect service dependencies or deployed requirements, while navigating a large C# WPF/XAML codebase made UI behavior analysis slow.",
     contribution:
-      "Built the MES_Smart_Tool validation workflow and connected it to MES_AI_SERVER, combining three-way reconciliation, REST integration, and identity validation.",
-    impact: ["90% reduction in verification time", "Full reconciliation coverage within the validation scope"],
-    stack: ["Python", "GitLab REST API", "Regex", "REST API", "AI Service"],
+      "Built automated GitLab diff analysis, BR/DA extraction, dependency tracing, server-list reconciliation, requirement cross-validation, and a FastAPI semantic-search pipeline grounded in static analysis and embeddings.",
+    impact: ["90% reduction in verification time", "Seven dependent checks consolidated into one workflow"],
+    stack: ["Python", "Flet", "GitLab REST API", "Oracle", "FastAPI", "Embeddings"],
     note: "Professional case study · Details generalized to protect proprietary systems",
   },
   {
     index: "02",
     label: "WIP RECONCILIATION",
-    title: "CIM–MES Stocker WIP Diff Check",
+    title: "MES–CIM Pallet Consistency Check",
     summary:
-      "A focused reconciliation tool that identifies mismatched stocker work-in-process records between CIM and MES and explains why each difference occurred.",
+      "A bulk reconciliation tool that compares pallet presence, physical state, and transaction history between MES and CIM and exports dashboard and CSV reports.",
     challenge:
-      "When CIM and MES reported different stocker WIP states, operators needed a faster way to find affected material and understand the reason for the mismatch.",
+      "More than 130,000 records had to be compared efficiently to separate true missing pallets, FULL/EMPTY state mismatches, and operational exceptions.",
     contribution:
-      "Implemented cross-system comparison, mismatch detection, and reason-level classification so differences could be reviewed as actionable operational results.",
-    impact: ["Faster WIP discrepancy analysis", "Improved CIM–MES traceability"],
-    stack: ["CIM", "MES", "Oracle SQL", "WIP Reconciliation"],
+      "Implemented optimized Oracle bulk fetch, cross-system consistency rules, transaction-code mapping, summary dashboards, and fast CSV export for the full comparison result.",
+    impact: ["130K+ records processed", "Missing and FULL/EMPTY discrepancies classified"],
+    stack: ["Python", "Pandas", "Oracle", "Bulk Fetch", "CSV Reporting"],
     note: "Professional case study · Repository details pending public-source review",
   },
   {
@@ -232,21 +232,21 @@ const koreanContent = {
   ],
   caseStudies: [
     {
-      index: "01", label: "배포 무결성", title: "MES 배포 인텔리전스 시스템",
-      summary: "MES_Smart_Tool과 MES_AI_SERVER를 연동해 배포 무결성을 검증하고 분석을 지원하는 통합 진단 시스템입니다.",
-      challenge: "분산된 서비스를 수동으로 검증하는 과정은 오래 걸렸고 애플리케이션 또는 서비스 식별자 불일치를 놓칠 가능성이 있었습니다.",
-      contribution: "MES_Smart_Tool 검증 워크플로를 구축하고 MES_AI_SERVER와 연결해 3-way reconciliation, REST 연동, 식별자 검증을 통합했습니다.",
-      impact: ["검증 시간 90% 단축", "정의된 검증 범위 전체에 대한 대조 수행"],
-      stack: ["Python", "GitLab REST API", "Regex", "REST API", "AI Service"],
+      index: "01", label: "배포 무결성", title: "MES 배포 감사 및 UI 인텔리전스",
+      summary: "변경된 UI 소스부터 서버 등록까지 7단계로 검증하는 배포 감사 도구와 MES UI 구조·서비스 메타데이터를 인덱싱하는 시맨틱 검색 서버로 구성된 도구군입니다.",
+      challenge: "수동 검증에서는 간접 서비스 종속성이나 배포요건 누락을 놓칠 수 있었고, 대규모 C# WPF/XAML 코드에서 UI 동작을 찾는 데 시간이 오래 걸렸습니다.",
+      contribution: "GitLab 변경분 분석, BR/DA 추출, 종속성 조회, 서버 목록 대조, 배포요건 교차검증과 정적 분석·임베딩 기반 FastAPI 시맨틱 검색 파이프라인을 구축했습니다.",
+      impact: ["검증 시간 90% 단축", "서로 의존하는 7단계 검증을 하나의 워크플로로 통합"],
+      stack: ["Python", "Flet", "GitLab REST API", "Oracle", "FastAPI", "Embeddings"],
       note: "회사 업무 사례 · 사내 시스템 보호를 위해 세부 구현은 일반화했습니다",
     },
     {
-      index: "02", label: "재공 대조", title: "CIM–MES Stocker 재공 Diff Check",
-      summary: "CIM과 MES 사이에서 일치하지 않는 Stocker 재공을 식별하고 각 차이가 발생한 사유까지 확인할 수 있도록 만든 대조 도구입니다.",
-      challenge: "CIM과 MES의 Stocker 재공 상태가 다를 때 영향받은 자재와 불일치 원인을 빠르게 찾을 수 있는 방법이 필요했습니다.",
-      contribution: "시스템 간 데이터 비교, 불일치 탐지, 사유별 분류를 구현해 운영자가 바로 확인할 수 있는 결과로 제공했습니다.",
-      impact: ["재공 불일치 분석 시간 단축", "CIM–MES 추적성 향상"],
-      stack: ["CIM", "MES", "Oracle SQL", "WIP Reconciliation"],
+      index: "02", label: "데이터 정합성", title: "MES–CIM 파렛트 정합성 Check",
+      summary: "MES와 CIM의 파렛트 존재 여부, 물리 상태, 트랜잭션 이력을 대조하고 Dashboard와 CSV 결과로 출력하는 대용량 정합성 분석 도구입니다.",
+      challenge: "13만 건 이상의 데이터를 효율적으로 비교해 실제 누락 파렛트, FULL/EMPTY 상태 불일치, 운영 예외를 구분해야 했습니다.",
+      contribution: "Oracle Bulk Fetch 최적화, 시스템 간 정합성 규칙, 트랜잭션 코드 매핑, 요약 Dashboard와 고속 CSV 출력을 구현했습니다.",
+      impact: ["13만 건 이상 데이터 처리", "누락 및 FULL/EMPTY 불일치 사유 분류"],
+      stack: ["Python", "Pandas", "Oracle", "Bulk Fetch", "CSV Reporting"],
       note: "회사 업무 사례 · 공개 소스 검토 후 저장소 링크 추가 예정",
     },
     {
