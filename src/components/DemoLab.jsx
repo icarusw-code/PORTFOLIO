@@ -208,7 +208,7 @@ const DemoLab = () => {
         <div className="demo-preview-grid">
           {cards.map((card) => <article className={`demo-preview-card ${activeDemo === card.key ? "is-active" : ""}`} key={card.key}>
             <div className="demo-preview-media"><video autoPlay muted loop playsInline preload="metadata" aria-label={`${card.title} ${copy.watch}`}><source src={card.video} type="video/mp4" /></video><span>{copy.watch}</span></div>
-            <div className="demo-preview-body"><h3>{card.title}</h3><p>{card.text}</p><div className="demo-preview-tags">{card.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><button type="button" className="demo-preview-open" aria-expanded={activeDemo === card.key} aria-controls="demo-workflow-detail" onClick={() => setActiveDemo(card.key)}>{copy.open}<span aria-hidden="true">↗</span></button></div>
+            <div className="demo-preview-body"><h3>{card.title}</h3><p>{card.text}</p><div className="demo-preview-tags">{card.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><button type="button" className="demo-preview-open" aria-expanded={activeDemo === card.key} aria-controls="demo-workflow-detail" onClick={() => setActiveDemo((current) => current === card.key ? null : card.key)}>{activeDemo === card.key ? copy.close : copy.open}<span aria-hidden="true">{activeDemo === card.key ? "↙" : "↗"}</span></button></div>
           </article>)}
         </div>
         {activeDemo && <div id="demo-workflow-detail" className="demo-shell demo-detail"><div className="demo-detail__bar"><span>{copy.synthetic}</span><button type="button" onClick={() => setActiveDemo(null)}>{copy.close} ×</button></div>{activeDemo === "audit" ? auditPanel : activeDemo === "ai" ? aiPanel : consistencyPanel}</div>}
