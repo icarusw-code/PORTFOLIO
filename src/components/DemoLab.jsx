@@ -10,6 +10,9 @@ const COPY = {
     watch: "AUTOPLAY PREVIEW",
     open: "View workflow",
     close: "Close workflow",
+    videoTab: "Watch film",
+    demoTab: "Try demo",
+    reconstruction: "Workflow reconstruction · Not the original product UI",
     auditTab: "7-step deploy audit",
     aiTab: "UI semantic search",
     consistencyTab: "MES–CIM consistency",
@@ -63,6 +66,9 @@ const COPY = {
     watch: "자동 재생 미리보기",
     open: "워크플로 보기",
     close: "워크플로 닫기",
+    videoTab: "영상으로 보기",
+    demoTab: "데모 직접 실행",
+    reconstruction: "워크플로 재구성 · 실제 제품 UI가 아닙니다",
     auditTab: "7단계 배포 감사",
     aiTab: "UI 시맨틱 검색",
     consistencyTab: "MES–CIM 정합성",
@@ -138,6 +144,7 @@ const DemoLab = () => {
   const { language } = useLanguage();
   const copy = COPY[language];
   const [activeDemo, setActiveDemo] = useState(null);
+  const [detailView, setDetailView] = useState("video");
   const [scanState, setScanState] = useState("ready");
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState(copy.searchPlaceholder);
@@ -163,6 +170,17 @@ const DemoLab = () => {
     () => filter === "all" ? PALLET_ROWS : PALLET_ROWS.filter((row) => row.type === filter),
     [filter]
   );
+
+  const toggleDemo = (key) => {
+    if (activeDemo === key) {
+      setActiveDemo(null);
+      return;
+    }
+    setActiveDemo(key);
+    setDetailView("video");
+  };
+
+  const activeCard = cards.find((card) => card.key === activeDemo);
 
   const auditPanel = (
     <div className="demo-console">
@@ -208,10 +226,20 @@ const DemoLab = () => {
         <div className="demo-preview-grid">
           {cards.map((card) => <article className={`demo-preview-card ${activeDemo === card.key ? "is-active" : ""}`} key={card.key}>
             <div className="demo-preview-media"><video autoPlay muted loop playsInline preload="metadata" aria-label={`${card.title} ${copy.watch}`}><source src={card.video} type="video/mp4" /></video><span>{copy.watch}</span></div>
-            <div className="demo-preview-body"><h3>{card.title}</h3><p>{card.text}</p><div className="demo-preview-tags">{card.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><button type="button" className="demo-preview-open" aria-expanded={activeDemo === card.key} aria-controls="demo-workflow-detail" onClick={() => setActiveDemo((current) => current === card.key ? null : card.key)}>{activeDemo === card.key ? copy.close : copy.open}<span aria-hidden="true">{activeDemo === card.key ? "↙" : "↗"}</span></button></div>
+            <div className="demo-preview-body"><h3>{card.title}</h3><p>{card.text}</p><div className="demo-preview-tags">{card.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><button type="button" className="demo-preview-open" aria-expanded={activeDemo === card.key} aria-controls="demo-workflow-detail" onClick={() => toggleDemo(card.key)}>{activeDemo === card.key ? copy.close : copy.open}<span aria-hidden="true">{activeDemo === card.key ? "↙" : "↗"}</span></button></div>
           </article>)}
         </div>
-        {activeDemo && <div id="demo-workflow-detail" className="demo-shell demo-detail"><div className="demo-detail__bar"><span>{copy.synthetic}</span><button type="button" onClick={() => setActiveDemo(null)}>{copy.close} ×</button></div>{activeDemo === "audit" ? auditPanel : activeDemo === "ai" ? aiPanel : consistencyPanel}</div>}
+        {activeDemo && <div id="demo-workflow-detail" className="demo-shell demo-detail">
+          <div className="demo-detail__bar">
+            <span>{copy.reconstruction}</span>
+            <div className="demo-detail__tabs" role="tablist" aria-label={activeCard.title}>
+              <button type="button" role="tab" aria-selected={detailView === "video"} className={detailView === "video" ? "is-active" : ""} onClick={() => setDetailView("video")}>{copy.videoTab}</button>
+              <button type="button" role="tab" aria-selected={detailView === "demo"} className={detailView === "demo" ? "is-active" : ""} onClick={() => setDetailView("demo")}>{copy.demoTab}</button>
+            </div>
+            <button type="button" className="demo-detail__close" onClick={() => setActiveDemo(null)}>{copy.close} ×</button>
+          </div>
+          {detailView === "video" ? <div className="demo-film" role="tabpanel"><video autoPlay muted loop playsInline controls aria-label={`${activeCard.title} ${copy.videoTab}`}><source src={activeCard.video} type="video/mp4" /></video><div><span>{copy.synthetic}</span><h3>{activeCard.title}</h3><p>{activeCard.text}</p></div></div> : <div role="tabpanel">{activeDemo === "audit" ? auditPanel : activeDemo === "ai" ? aiPanel : consistencyPanel}</div>}
+        </div>}
       </div>
     </section>
   );
