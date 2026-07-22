@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.video-tools/
 /.pnp
 .pnp.js
 
