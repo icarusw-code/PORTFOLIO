@@ -1,22 +1,11 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
 import HomeView from "./views/HomeView";
-import smooth from "./utils/smooth";
-import link from "./utils/link";
+import { LanguageProvider } from "./context/LanguageContext";
 
-const App = () => {
-  useEffect(() => {
-    smooth();
-    link();
-  }, []);
-
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeView />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+const App = () => (
+  <LanguageProvider>
+    <HomeView />
+  </LanguageProvider>
+);
 
 export default App;

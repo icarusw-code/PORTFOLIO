@@ -1,46 +1,28 @@
 import React from "react";
-import { contactText } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
 
 const Contacts = () => {
+  const { content } = useLanguage();
+  const { contactText, ui } = content;
+
   return (
-    <section id="contact">
-      <div className="contact__inner">
-        <h2 className="contact__title">Contact</h2>
-        <div className="contact__lines" aria-hidden="true">
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-        </div>
-        <div className="contact__text">
-          <div className="text">
-            {contactText.map((contact, key) => (
-              <div className="content" key={key}>
-                <a
-                  href={contact.link}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {contact.title}
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="contact__lines bottom" aria-hidden="true">
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-        </div>
+  <section id="contact" className="contact-section">
+    <div className="page-shell contact-section__inner">
+      <div>
+        <p className="eyebrow">{ui.contactEyebrow}</p>
+        <h2>{ui.contactTitle}</h2>
       </div>
-    </section>
+      <div className="contact-links">
+        {contactText.map((contact) => (
+          <a href={contact.link} key={contact.label} target={contact.link.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+            <span>{contact.label}</span>
+            <strong>{contact.value}</strong>
+            <i>↗</i>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
   );
 };
 

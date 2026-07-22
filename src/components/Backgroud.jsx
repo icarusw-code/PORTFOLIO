@@ -1,37 +1,34 @@
-import React, { useEffect } from "react";
-import { backgroundImg } from "../constants";
+import React from "react";
 
-const Backgroud = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const parallaxLayers = document.querySelectorAll(".parallax");
-      parallaxLayers.forEach((layer, index) => {
-        const speed = index * 30; // 각 레이어별 속도 조절
-        const offset = window.pageYOffset;
-        layer.style.transform = `translateY(${(offset * speed) / 1000}px)`;
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // cleanup
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <section id="background">
-      <div className="keyart" id="parallax">
-        {backgroundImg.map((background, key) => (
-          <div
-            className="keyart_layer parallax"
-            key={key}
-            id={`keyart-${key}`}
-            style={{ backgroundImage: `url(${background.img})` }}
-          ></div>
-        ))}
-      </div>
-    </section>
-  );
-};
+const Backgroud = () => (
+  <div className="system-scene" aria-hidden="true">
+    <div className="system-scene__glow" />
+    <div className="system-scene__sun">
+      <span className="sun-ring sun-ring--one" />
+      <span className="sun-ring sun-ring--two" />
+      <i className="sun-core" />
+    </div>
+    <div className="system-scene__grid" />
+    <div className="system-scene__orbit orbit--one" />
+    <div className="system-scene__orbit orbit--two" />
+    <div className="system-scene__signal signal--one" />
+    <div className="system-scene__signal signal--two" />
+    <div className="system-scene__packets packets--one">
+      <i /><i /><i /><i />
+    </div>
+    <div className="system-scene__packets packets--two">
+      <i /><i /><i />
+    </div>
+    <div className="system-scene__factory factory--back">
+      <span /><span /><span /><span /><span />
+    </div>
+    <div className="system-scene__factory factory--front">
+      <span /><span /><span /><span /><span /><span />
+    </div>
+    <div className="system-scene__rail">
+      <i /><i /><i /><i /><i /><i />
+    </div>
+  </div>
+);
 
 export default Backgroud;

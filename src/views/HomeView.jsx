@@ -9,25 +9,27 @@ import Footer from "../components/Footer";
 import Contacts from "../components/Contacts";
 import Main from "../components/Main";
 import Backgroud from "../components/Backgroud";
+import DemoLab from "../components/DemoLab";
 import { Skill } from "../components/Skill";
 
-const HomeView = () => {
-  return (
-    <>
-      <Skip />
-      <Header />
-      <Main>
+const HomeView = () => (
+  <>
+    <Skip />
+    <Header />
+    <Main>
+      <div className="hero-stage">
         <Backgroud />
         <Intro />
-        <Skill />
-        <Site />
-        <Port />
-        <Journey />
-        <Contacts />
-      </Main>
-      <Footer />
-    </>
-  );
-};
+      </div>
+      <Skill />
+      <Site />
+      <DemoLab />
+      <Port />
+      <Journey />
+      <Contacts />
+    </Main>
+    <Footer />
+  </>
+);
 
 export default HomeView;

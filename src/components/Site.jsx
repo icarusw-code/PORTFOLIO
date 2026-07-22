@@ -1,47 +1,50 @@
 import React from "react";
-import { siteText } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
 
 const Site = () => {
+  const { content } = useLanguage();
+  const { caseStudies, ui } = content;
+
   return (
-    <section id="site">
-      <div className="site__inner">
-        <h2 className="site__title">HIGHLIGHT</h2>
-        <div className="site__wrap">
-          {siteText.map((site, key) => (
-            <article className={`site__item s${key + 1}`} key={key}>
-              <span className="num">
-                {key + 1}.<span className="site-title-small">{site.title}</span>
-              </span>
-              <div className="content">
-                <div className="video">
-                  <iframe
-                    src={site.videolink}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title="YouTube Video"
-                  ></iframe>
-                </div>
-                <div className="text">
-                  <div>{site.text[0]}</div>
-                  <div>{site.text[1]}</div>
-                  <div>{site.text[2]}</div>
-                </div>
-              </div>
-              <div className="btn">
-                {/* <a href={site.code}>code</a> */}
-                <a href={site.view}>See More</a>
-              </div>
-              <div className="info">
-                <span>{site.info[0]}</span>
-                <span>{site.info[1]}</span>
-                <span>{site.info[2]}</span>
-              </div>
-            </article>
-          ))}
+  <section id="case-studies" className="section section--dark">
+    <div className="page-shell">
+      <div className="section-heading section-heading--split">
+        <div>
+          <p className="eyebrow">{ui.caseEyebrow}</p>
+          <h2>{ui.caseTitle}</h2>
         </div>
+        <p>{ui.caseIntro}</p>
       </div>
-    </section>
+      <div className="case-list">
+        {caseStudies.map((study) => (
+          <article className="case-card" key={study.index}>
+            <header className="case-card__header">
+              <span className="case-card__number">{study.index}</span>
+              <div>
+                <p className="case-card__label">{study.label}</p>
+                <h3>{study.title}</h3>
+              </div>
+            </header>
+            <p className="case-card__summary">{study.summary}</p>
+            <div className="case-card__details">
+              <div><span>{ui.challenge}</span><p>{study.challenge}</p></div>
+              <div><span>{ui.contribution}</span><p>{study.contribution}</p></div>
+            </div>
+            <div className="case-card__footer">
+              <div className="impact-list">
+                {study.impact.map((impact) => <strong key={impact}>{impact}</strong>)}
+              </div>
+              <div className="tag-list tag-list--dark">
+                {study.stack.map((item) => <span key={item}>{item}</span>)}
+              </div>
+            </div>
+            <p className="case-card__note">{study.note}</p>
+            {(study.index === "01" || study.index === "02") && <a className="case-card__demo-link" href="#demos">{ui.openDemo} <span>↘</span></a>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
   );
 };
 
