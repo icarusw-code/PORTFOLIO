@@ -587,6 +587,13 @@ button {
 .button--ghost { border: 1px solid rgba(244,240,231,0.24); color: var(--paper); }
 .button--ghost:hover { border-color: rgba(244,240,231,0.7); }
 
+html[lang="ko"] .button {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
 .hero__availability {
   color: rgba(244,240,231,0.42);
   font-family: var(--font-mono);

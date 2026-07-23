@@ -292,7 +292,7 @@ const koreanContent = {
   ui: {
     brandSubtitle: "제조 시스템 엔지니어",
     openNavigation: "메뉴 열기", closeNavigation: "메뉴 닫기", skipToContent: "본문으로 바로가기",
-    heroPrimary: "주요 사례 보기", heroSecondary: "연락하기", heroResume: "레쥬메 PDF", terminalLabel: "현재 전문 영역", terminalFile: "systems_overview.log",
+    heroPrimary: "주요 사례 보기", heroSecondary: "연락하기", heroResume: "이력서 PDF", terminalLabel: "현재 전문 영역", terminalFile: "systems_overview.log",
     terminalRole: "역할", terminalDomain: "도메인", terminalFocus: "중점 영역", terminalStatus: "상태",
     terminalRoleValue: "Manufacturing Systems Engineer", terminalDomainValue: "MES / MCS / 스마트팩토리", terminalFocusValue: "통합 · 신뢰성 · 자동화", terminalStatusValue: "생산 시스템 운영 중",
     expertiseEyebrow: "전문 분야", expertiseTitle: <>설비 신호에서<br />운영 의사결정까지.</>, expertiseIntro: "소프트웨어와 자동화, 생산이 만나는 모든 계층을 다룹니다.",
