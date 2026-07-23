@@ -15,6 +15,7 @@ const Intro = () => {
         <div className="hero__actions">
           <a className="button button--primary" href="#case-studies">{ui.heroPrimary}</a>
           <a className="button button--ghost" href="#contact">{ui.heroSecondary}</a>
+          <a className="button button--ghost" href="/jayce-choi-resume.pdf" target="_blank" rel="noreferrer">{ui.heroResume}</a>
         </div>
         <p className="hero__availability">{heroData.availability}</p>
       </div>
