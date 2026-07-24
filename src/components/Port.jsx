@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { trackEvent } from "../utils/analytics";
 
 const Port = () => {
   const { content } = useLanguage();
@@ -30,7 +31,18 @@ const Port = () => {
             {project.links && (
               <div className="project-links" aria-label={`${project.title} links`}>
                 {project.links.map((link) => (
-                  <a className="text-link" href={link.url} target="_blank" rel="noreferrer" key={link.url}>
+                  <a
+                    className="text-link"
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={link.url}
+                    onClick={() => trackEvent("project_link_click", {
+                      project_name: project.title,
+                      link_label: link.label || ui.viewProject,
+                      destination: link.url,
+                    })}
+                  >
                     {link.label || ui.viewProject} <span>↗</span>
                   </a>
                 ))}

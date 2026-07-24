@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { trackEvent } from "../utils/analytics";
 
 const Intro = () => {
   const { content } = useLanguage();
@@ -13,9 +14,9 @@ const Intro = () => {
         <h1>{heroData.title}</h1>
         <p className="hero__description">{heroData.description}</p>
         <div className="hero__actions">
-          <a className="button button--primary" href="#case-studies">{ui.heroPrimary}</a>
-          <a className="button button--ghost" href="#contact">{ui.heroSecondary}</a>
-          <a className="button button--ghost" href="/jayce-choi-resume.pdf" target="_blank" rel="noreferrer">{ui.heroResume}</a>
+          <a className="button button--primary" href="#case-studies" onClick={() => trackEvent("case_studies_click", { location: "hero" })}>{ui.heroPrimary}</a>
+          <a className="button button--ghost" href="#contact" onClick={() => trackEvent("contact_click", { location: "hero" })}>{ui.heroSecondary}</a>
+          <a className="button button--ghost" href="/jayce-choi-resume.pdf" target="_blank" rel="noreferrer" onClick={() => trackEvent("resume_open", { location: "hero" })}>{ui.heroResume}</a>
         </div>
         <p className="hero__availability">{heroData.availability}</p>
       </div>

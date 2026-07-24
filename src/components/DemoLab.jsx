@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { trackEvent } from "../utils/analytics";
 
 const COPY = {
   en: {
@@ -161,6 +162,7 @@ const DemoLab = () => {
   ];
 
   const runAudit = () => {
+    trackEvent("demo_interaction", { demo_name: "deploy_audit", action: "run" });
     window.clearTimeout(scanTimer.current);
     setScanState("running");
     scanTimer.current = window.setTimeout(() => setScanState("complete"), 1400);
@@ -176,6 +178,7 @@ const DemoLab = () => {
       setActiveDemo(null);
       return;
     }
+    trackEvent("demo_open", { demo_name: key });
     setActiveDemo(key);
     setDetailView("video");
   };
@@ -205,7 +208,7 @@ const DemoLab = () => {
   const aiPanel = (
     <div className="demo-console">
       <header className="demo-console__header"><div><span className="demo-kicker">MES AI SERVER / SEMANTIC SEARCH</span><h3>{copy.aiTitle}</h3><p>{copy.aiIntro}</p></div><span className="demo-state demo-state--complete">2,486 {copy.indexed}</span></header>
-      <form className="ai-search" onSubmit={(event) => { event.preventDefault(); setSearched(true); }}><label>{copy.query}<input value={query} onChange={(event) => setQuery(event.target.value)} /></label><button type="submit" className="demo-run">{copy.search}</button></form>
+      <form className="ai-search" onSubmit={(event) => { event.preventDefault(); trackEvent("demo_interaction", { demo_name: "semantic_search", action: "search" }); setSearched(true); }}><label>{copy.query}<input value={query} onChange={(event) => setQuery(event.target.value)} /></label><button type="submit" className="demo-run">{copy.search}</button></form>
       <div className="ai-results"><div className="ai-candidates"><p className="demo-panel-label">{copy.candidates}</p>{SEARCH_RESULTS.map((result, index) => <article className="ai-result" key={result.view}><span>{index + 1}</span><div><strong>{result.view}</strong><small>{result.evidence}</small></div><div><b>{result.score}</b><small>{result.type}</small></div></article>)}</div><aside className="ai-answer"><p className="demo-panel-label">{copy.answer}</p><strong>{searched ? "PalletStatusView" : "—"}</strong><p>{searched ? copy.answerText : "// submit a natural-language query"}</p><div className="tag-list tag-list--dark"><span>Static Analysis</span><span>Embeddings</span><span>FastAPI</span></div></aside></div>
     </div>
   );
@@ -233,8 +236,8 @@ const DemoLab = () => {
           <div className="demo-detail__bar">
             <span>{copy.reconstruction}</span>
             <div className="demo-detail__tabs" role="tablist" aria-label={activeCard.title}>
-              <button type="button" role="tab" aria-selected={detailView === "video"} className={detailView === "video" ? "is-active" : ""} onClick={() => setDetailView("video")}>{copy.videoTab}</button>
-              <button type="button" role="tab" aria-selected={detailView === "demo"} className={detailView === "demo" ? "is-active" : ""} onClick={() => setDetailView("demo")}>{copy.demoTab}</button>
+              <button type="button" role="tab" aria-selected={detailView === "video"} className={detailView === "video" ? "is-active" : ""} onClick={() => { trackEvent("demo_tab_view", { demo_name: activeDemo, tab_name: "video" }); setDetailView("video"); }}>{copy.videoTab}</button>
+              <button type="button" role="tab" aria-selected={detailView === "demo"} className={detailView === "demo" ? "is-active" : ""} onClick={() => { trackEvent("demo_tab_view", { demo_name: activeDemo, tab_name: "interactive" }); setDetailView("demo"); }}>{copy.demoTab}</button>
             </div>
             <button type="button" className="demo-detail__close" onClick={() => setActiveDemo(null)}>{copy.close} ×</button>
           </div>

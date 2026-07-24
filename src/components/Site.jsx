@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { trackEvent } from "../utils/analytics";
 
 const Site = () => {
   const { content } = useLanguage();
@@ -39,7 +40,7 @@ const Site = () => {
               </div>
             </div>
             <p className="case-card__note">{study.note}</p>
-            {(study.index === "01" || study.index === "02") && <a className="case-card__demo-link" href="#demos">{ui.openDemo} <span>↘</span></a>}
+            {(study.index === "01" || study.index === "02") && <a className="case-card__demo-link" href="#demos" onClick={() => trackEvent("demo_section_click", { case_study: study.title })}>{ui.openDemo} <span>↘</span></a>}
           </article>
         ))}
       </div>

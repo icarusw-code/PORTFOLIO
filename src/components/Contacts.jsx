@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { trackEvent } from "../utils/analytics";
 
 const Contacts = () => {
   const { content } = useLanguage();
@@ -14,7 +15,19 @@ const Contacts = () => {
       </div>
       <div className="contact-links">
         {contactText.map((contact) => (
-          <a href={contact.link} key={contact.label} target={contact.link.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
+          <a
+            href={contact.link}
+            key={contact.label}
+            target={contact.link.startsWith("http") ? "_blank" : undefined}
+            rel="noreferrer"
+            onClick={() => trackEvent("contact_link_click", {
+              contact_type: contact.link.startsWith("mailto:")
+                ? "email"
+                : contact.link.includes("linkedin.com")
+                  ? "linkedin"
+                  : "github",
+            })}
+          >
             <span>{contact.label}</span>
             <strong>{contact.value}</strong>
             <i>↗</i>
